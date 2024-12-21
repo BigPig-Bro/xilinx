@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Dec 21 16:05:31 2024
+# Process ID: 101404
+# Current directory: E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/impl_1
+# Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+# Log file: E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/impl_1/top.vdi
+# Journal file: E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/impl_1\vivado.jou
+# Running On        :DESKTOP-9MNJBAS
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19043
+# Processor Detail  :13th Gen Intel(R) Core(TM) i5-13400
+# CPU Frequency     :2496 MHz
+# CPU Physical cores:10
+# CPU Logical cores :16
+# Host memory       :68467 MB
+# Swap memory       :73014 MB
+# Total Virtual     :141482 MB
+# Available Virtual :103749 MB
+#-----------------------------------------------------------
+source top.tcl -notrace

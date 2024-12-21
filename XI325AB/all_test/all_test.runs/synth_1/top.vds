@@ -1,0 +1,323 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Dec 21 16:04:47 2024
+# Process ID: 111124
+# Current directory: E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/synth_1/top.vds
+# Journal file: E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/synth_1\vivado.jou
+# Running On        :DESKTOP-9MNJBAS
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19043
+# Processor Detail  :13th Gen Intel(R) Core(TM) i5-13400
+# CPU Frequency     :2496 MHz
+# CPU Physical cores:10
+# CPU Logical cores :16
+# Host memory       :68467 MB
+# Swap memory       :73014 MB
+# Total Virtual     :141482 MB
+# Available Virtual :103236 MB
+#-----------------------------------------------------------
+Sourcing tcl script 'D:/Xilinx20241/Vivado/2024.1/scripts/Vivado_init.tcl'
+source top.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 531.309 ; gain = 202.676
+Command: read_checkpoint -auto_incremental -incremental E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7k325tffg676-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg676-2
+INFO: [Device 21-9227] Part: xc7k325tffg676-2 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 20712
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1459.195 ; gain = 448.367
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/top.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_colorbar_top' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/hdmi_colorbar_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/synth_1/.Xil/Vivado-111124-DESKTOP-9MNJBAS/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/synth_1/.Xil/Vivado-111124-DESKTOP-9MNJBAS/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'video_driver' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/video_driver.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'video_driver' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/video_driver.v:24]
+INFO: [Synth 8-6157] synthesizing module 'video_display' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/video_display.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'video_display' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/video_display.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dvi_transmitter_top' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/dvi_transmitter_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'asyn_rst_syn' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/asyn_rst_syn.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'asyn_rst_syn' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/asyn_rst_syn.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dvi_encoder' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/dvi_encoder.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'dvi_encoder' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/dvi_encoder.v:21]
+INFO: [Synth 8-6157] synthesizing module 'serializer_10_to_1' [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/serializer_10_to_1.v:25]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [D:/Xilinx20241/Vivado/2024.1/scripts/rt/data/unisim_comp.v:100709]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (0#1) [D:/Xilinx20241/Vivado/2024.1/scripts/rt/data/unisim_comp.v:100709]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized0' [D:/Xilinx20241/Vivado/2024.1/scripts/rt/data/unisim_comp.v:100709]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: SDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized0' (0#1) [D:/Xilinx20241/Vivado/2024.1/scripts/rt/data/unisim_comp.v:100709]
+INFO: [Synth 8-6155] done synthesizing module 'serializer_10_to_1' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/serializer_10_to_1.v:25]
+INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [D:/Xilinx20241/Vivado/2024.1/scripts/rt/data/unisim_comp.v:96472]
+	Parameter IOSTANDARD bound to: TMDS_33 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (0#1) [D:/Xilinx20241/Vivado/2024.1/scripts/rt/data/unisim_comp.v:96472]
+INFO: [Synth 8-6155] done synthesizing module 'dvi_transmitter_top' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/dvi_transmitter_top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_colorbar_top' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/hdmi/hdmi_colorbar_top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/top.sv:1]
+WARNING: [Synth 8-7129] Port pixel_ypos[10] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[9] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[8] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[7] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[6] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[5] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[4] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[3] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[2] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[1] in module video_display is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pixel_ypos[0] in module video_display is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1571.371 ; gain = 560.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1571.371 ; gain = 560.543
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1571.371 ; gain = 560.543
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1571.371 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'hdmi_colorbar_top_m0/clk_wiz_0'
+Finished Parsing XDC File [e:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'hdmi_colorbar_top_m0/clk_wiz_0'
+Parsing XDC File [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/top.xdc]
+Finished Parsing XDC File [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/src/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1672.258 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1672.258 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for i_clk. (constraint file  e:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for i_clk. (constraint file  e:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for hdmi_colorbar_top_m0/clk_wiz_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 3     
+	   2 Input   10 Bit       Adders := 1     
+	   5 Input    5 Bit       Adders := 6     
+	   4 Input    5 Bit       Adders := 3     
+	   8 Input    4 Bit       Adders := 6     
+	   2 Input    4 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 42    
++---Registers : 
+	               24 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 9     
+	                1 Bit    Registers := 22    
++---Muxes : 
+	   2 Input   24 Bit        Muxes := 1     
+	   5 Input   24 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 3     
+	   2 Input   10 Bit        Muxes := 7     
+	   5 Input   10 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 15    
+	   2 Input    1 Bit        Muxes := 27    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |clk_wiz   |     1|
+|2     |CARRY4    |     7|
+|3     |LUT1      |     6|
+|4     |LUT2      |    17|
+|5     |LUT3      |    19|
+|6     |LUT4      |    11|
+|7     |LUT5      |    22|
+|8     |LUT6      |    34|
+|9     |OSERDESE2 |     8|
+|11    |FDCE      |    24|
+|12    |FDPE      |     2|
+|13    |FDRE      |    72|
+|14    |IBUF      |     6|
+|15    |OBUF      |    23|
+|16    |OBUFDS    |     4|
++------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1672.258 ; gain = 661.430
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1672.258 ; gain = 560.543
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1672.258 ; gain = 661.430
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1672.258 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1672.258 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e8334d2f
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1672.258 ; gain = 1126.602
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1672.258 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI325A/all_test/all_test.runs/synth_1/top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 21 16:05:24 2024...
