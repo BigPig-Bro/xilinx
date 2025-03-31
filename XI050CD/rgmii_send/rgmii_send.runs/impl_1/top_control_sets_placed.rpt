@@ -1,0 +1,88 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+| Date         : Mon Mar 31 22:26:14 2025
+| Host         : DESKTOP-9MNJBAS running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a50t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    10 |
+|    Minimum number of control sets                        |    10 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    23 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    10 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              13 |            6 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              18 |            6 |
+| Yes          | No                    | No                     |              31 |           13 |
+| Yes          | No                    | Yes                    |              32 |           11 |
+| Yes          | Yes                   | No                     |              27 |           13 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------+------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|            Clock Signal            |                  Enable Signal                 |              Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------------+------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+|  util_gmii_to_rgmii_m0/gmii_tx_clk | GMII_send_m0/check_buffer[17]_i_1_n_0          |                                           |                2 |              2 |         1.00 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk | util_gmii_to_rgmii_m0/gmii_txd_r_d1[3]_i_1_n_0 |                                           |                1 |              5 |         5.00 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk |                                                | GMII_send_m0/SR[0]                        |                4 |              8 |         2.00 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk | GMII_send_m0/GMII_TXD[7]_i_1_n_0               |                                           |                6 |              8 |         1.33 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk |                                                | util_gmii_to_rgmii_m0/tx_reset_sync       |                2 |             10 |         5.00 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk | GMII_send_m0/send_cnt[10]_i_1_n_0              | GMII_send_m0/SR[0]                        |                8 |             11 |         1.38 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk |                                                |                                           |                6 |             13 |         2.17 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk | GMII_send_m0/check_buffer[15]_i_1_n_0          |                                           |                4 |             16 |         4.00 |
+|  util_gmii_to_rgmii_m0/gmii_tx_clk | GMII_send_m0/packet_header[2][15]_i_2_n_0      | GMII_send_m0/packet_header[2][15]_i_1_n_0 |                5 |             16 |         3.20 |
+| ~util_gmii_to_rgmii_m0/gmii_tx_clk | GMII_send_m0/crc_en_reg_n_0                    | GMII_send_m0/crc_rst_reg_n_0              |               11 |             32 |         2.91 |
++------------------------------------+------------------------------------------------+-------------------------------------------+------------------+----------------+--------------+
+
+

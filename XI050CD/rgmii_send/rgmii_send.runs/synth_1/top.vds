@@ -1,0 +1,354 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon Mar 31 22:25:17 2025
+# Process ID         : 37040
+# Current directory  : D:/Users/HUIP/Desktop/rgmii_send/rgmii_send.runs/synth_1
+# Command line       : vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file           : D:/Users/HUIP/Desktop/rgmii_send/rgmii_send.runs/synth_1/top.vds
+# Journal file       : D:/Users/HUIP/Desktop/rgmii_send/rgmii_send.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-9MNJBAS
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19043
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13400
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 16
+# Host memory        : 68467 MB
+# Swap memory        : 73014 MB
+# Total Virtual      : 141482 MB
+# Available Virtual  : 96630 MB
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental D:/Users/HUIP/Desktop/rgmii_send/rgmii_send.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from D:/Users/HUIP/Desktop/rgmii_send/rgmii_send.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7a50tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a50t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a50t'
+INFO: [Device 21-403] Loading part xc7a50tfgg484-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 87864
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1038.957 ; gain = 475.688
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-11065] parameter 'IP_HEAD_CODE' becomes localparam in 'GMII_send' with formal parameter declaration list [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:27]
+WARNING: [Synth 8-11065] parameter 'DES_MAC_CODE' becomes localparam in 'GMII_send' with formal parameter declaration list [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:28]
+WARNING: [Synth 8-11065] parameter 'BOARD_MAC_CODE' becomes localparam in 'GMII_send' with formal parameter declaration list [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:29]
+WARNING: [Synth 8-11065] parameter 'DATA_TYPE' becomes localparam in 'GMII_send' with formal parameter declaration list [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:30]
+WARNING: [Synth 8-11065] parameter 'MAC_DATA' becomes localparam in 'GMII_send' with formal parameter declaration list [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:31]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'gmii_rxd' is not allowed [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:46]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'gmii_rx_dv' is not allowed [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:47]
+WARNING: [Synth 8-11121] redeclaration of ANSI port 'gmii_rx_er' is not allowed [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:48]
+INFO: [Synth 8-6157] synthesizing module 'top' [D:/Users/HUIP/Desktop/rgmii_send/src/top.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'GMII_send' [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:79]
+INFO: [Synth 8-6157] synthesizing module 'crc' [D:/Users/HUIP/Desktop/rgmii_send/src/crc.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'crc' (0#1) [D:/Users/HUIP/Desktop/rgmii_send/src/crc.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'GMII_send' (0#1) [D:/Users/HUIP/Desktop/rgmii_send/src/GMII_send.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'util_gmii_to_rgmii' [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:2]
+INFO: [Synth 8-6157] synthesizing module 'ODDR2' [D:/Xilinx20242/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103098]
+	Parameter DDR_ALIGNMENT bound to: C0 - type: string 
+	Parameter INIT bound to: 1'b0 
+	Parameter SRTYPE bound to: ASYNC - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'ODDR2' (0#1) [D:/Xilinx20242/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103098]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Xilinx20242/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [D:/Xilinx20242/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'util_gmii_to_rgmii' (0#1) [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [D:/Users/HUIP/Desktop/rgmii_send/src/top.sv:1]
+WARNING: [Synth 8-6014] Unused sequential element gmii_tx_er_r_d1_reg was removed.  [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:84]
+WARNING: [Synth 8-3848] Net gmii_rxd in module/entity util_gmii_to_rgmii does not have driver. [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:17]
+WARNING: [Synth 8-3848] Net gmii_rx_dv in module/entity util_gmii_to_rgmii does not have driver. [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:18]
+WARNING: [Synth 8-3848] Net gmii_rx_er in module/entity util_gmii_to_rgmii does not have driver. [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:19]
+WARNING: [Synth 8-7129] Port gmii_rxd[7] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rxd[6] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rxd[5] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rxd[4] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rxd[3] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rxd[2] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rxd[1] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rxd[0] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rx_dv in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gmii_rx_er in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rgmii_rd[3] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rgmii_rd[2] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rgmii_rd[1] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rgmii_rd[0] in module util_gmii_to_rgmii is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rgmii_rx_ctl in module util_gmii_to_rgmii is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1149.742 ; gain = 586.473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1149.742 ; gain = 586.473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1149.742 ; gain = 586.473
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1149.742 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/U3_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'C10' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/U_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'C10' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[0].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'C10' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[1].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'C10' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[2].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'C10' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[3].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'C10' that is connected to this pin will not be connected to the replacement instance.
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk_test'. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_txc'. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:17]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:17]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks rgmii_txc]'. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:17]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-627] No clocks matched 'rgmii_txc'. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:18]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:18]
+CRITICAL WARNING: [Vivado 12-4739] set_output_delay:No valid object(s) found for '-clock [get_clocks rgmii_txc]'. [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc:18]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+Finished Parsing XDC File [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Users/HUIP/Desktop/rgmii_send/src/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1234.160 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  ODDR2 => ODDR: 6 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1234.160 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1234.160 ; gain = 670.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a50tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1234.160 ; gain = 670.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1234.160 ; gain = 670.891
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'GMII_send'
+WARNING: [Synth 8-3936] Found unconnected internal register 'gmii_txd_r_d1_reg' and it is trimmed from '8' to '4' bits. [D:/Users/HUIP/Desktop/rgmii_send/src/util_gmii_to_rgmii.v:82]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                         00000001 |                             0000
+               CHECK_SUM |                         00000010 |                             0001
+             PACKET_HEAD |                         00000100 |                             0010
+                SEND_MAC |                         00001000 |                             0011
+             SEND_HEADER |                         00010000 |                             0100
+               SEND_DATA |                         00100000 |                             0101
+                SEND_CRC |                         01000000 |                             0110
+                   DELAY |                         10000000 |                             0111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'GMII_send'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1234.160 ; gain = 670.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	  10 Input   20 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 9     
+	   3 Input      1 Bit         XORs := 6     
+	   6 Input      1 Bit         XORs := 7     
+	   8 Input      1 Bit         XORs := 1     
+	   5 Input      1 Bit         XORs := 4     
+	   7 Input      1 Bit         XORs := 7     
+	  10 Input      1 Bit         XORs := 2     
+	   9 Input      1 Bit         XORs := 3     
+	  12 Input      1 Bit         XORs := 1     
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 9     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 4     
+	   4 Input   32 Bit        Muxes := 2     
+	   8 Input   32 Bit        Muxes := 3     
+	   2 Input   16 Bit        Muxes := 1     
+	   4 Input   16 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	   8 Input   11 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 120 (col length:60)
+BRAMs: 150 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1234.160 ; gain = 670.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1345.156 ; gain = 781.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1376.301 ; gain = 813.031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1376.816 ; gain = 813.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    13|
+|3     |LUT1   |    26|
+|4     |LUT2   |    32|
+|5     |LUT3   |    45|
+|6     |LUT4   |    24|
+|7     |LUT5   |    26|
+|8     |LUT6   |    93|
+|9     |ODDR2  |     6|
+|10    |FDPE   |    32|
+|11    |FDRE   |    88|
+|12    |FDSE   |     1|
+|13    |IBUF   |     2|
+|14    |OBUF   |     7|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1571.730 ; gain = 924.043
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1571.730 ; gain = 1008.461
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1571.730 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/U3_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'CLK' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/U_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'CLK' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[0].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'CLK' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[1].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'CLK' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[2].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'CLK' that is connected to this pin will not be connected to the replacement instance.
+WARNING: [Netlist 29-151] Pin 'C1' on instance 'util_gmii_to_rgmii_m0/gen_tx_data[3].U2_ODDR2' of cell type 'ODDR2' does not have an equivalent function on the new cell type 'ODDR'. Net 'CLK' that is connected to this pin will not be connected to the replacement instance.
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1584.559 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  ODDR2 => ODDR: 6 instances
+
+Synth Design complete | Checksum: 32d8effa
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 44 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1584.559 ; gain = 1211.012
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1584.559 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Users/HUIP/Desktop/rgmii_send/rgmii_send.runs/synth_1/top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 31 22:25:47 2025...
