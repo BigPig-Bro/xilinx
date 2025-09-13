@@ -1,0 +1,8 @@
+verilog xil_defaultlib --include "../../../ipstatic" \
+"../../../../hdmi_loop_ms7210_ms7200.gen/sources_1/ip/input_pll/input_pll_clk_wiz.v" \
+"../../../../hdmi_loop_ms7210_ms7200.gen/sources_1/ip/input_pll/input_pll.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
