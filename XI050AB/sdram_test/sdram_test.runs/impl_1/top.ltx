@@ -1,0 +1,1020 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "100000000"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "sdram_test_top_m0/ila_0_m0",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "5B5532408CED57C69D55D5711285C784",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/state_main",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/state_main[3]",
+                                                "parentNetId": 0
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/state_main[2]",
+                                                "parentNetId": 1
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/state_main[1]",
+                                                "parentNetId": 2
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/state_main[0]",
+                                                "parentNetId": 3
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_rd_burst_req",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_rd_burst_len",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_len[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 20,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_rd_burst_addr",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[20]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[19]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[18]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[17]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[16]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[15]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[14]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[13]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[12]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[11]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[10]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_rd_burst_addr[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/i_rd_burst_data_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/i_rd_burst_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[31]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[30]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[29]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[28]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[27]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[26]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[25]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[24]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[23]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[22]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[21]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[20]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[19]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[18]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[17]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[16]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[15]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[14]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[13]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[12]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[11]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[10]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/i_rd_burst_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe6",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/i_rd_burst_finish",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe7",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_wr_burst_req",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe8",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_wr_burst_len",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_len[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 20,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_wr_burst_addr",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[20]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[19]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[18]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[17]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[16]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[15]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[14]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[13]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[12]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[11]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[10]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_addr[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe10",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/i_wr_burst_data_req",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_wr_burst_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[31]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[30]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[29]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[28]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[27]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[26]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[25]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[24]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[23]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[22]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[21]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[20]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[19]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[18]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[17]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[16]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[15]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[14]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[13]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[12]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[11]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[10]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/o_wr_burst_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/i_wr_burst_finish",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/write_check",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[31]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[30]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[29]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[28]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[27]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[26]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[25]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[24]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[23]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[22]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[21]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[20]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[19]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[18]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[17]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[16]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[15]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[14]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[13]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[12]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[11]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[10]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/write_check[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 14,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/read_check",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[31]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[30]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[29]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[28]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[27]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[26]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[25]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[24]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[23]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[22]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[21]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[20]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[19]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[18]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[17]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[16]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[15]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[14]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[13]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[12]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[11]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[10]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[9]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[8]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[7]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[6]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[5]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[4]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[3]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[2]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[1]"
+                                            },
+                                            {
+                                                "name": "sdram_test_top_m0/read_check[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe15",
+                                "id": 15,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 15,
+                                "nets": [
+                                    {
+                                        "name": "sdram_test_top_m0/o_wr_error",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "parent_nets": [
+                    {
+                        "id": 0,
+                        "name": "sdram_test_top_m0/state_main[3]",
+                        "state_reg": [
+                            {
+                                "name": "sdram_test_top_m0/state_main_reg[3]",
+                                "states": [
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "WRITE_DONE",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "READ_DONE",
+                                        "val": "0100"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "name": "sdram_test_top_m0/state_main[2]",
+                        "state_reg": [
+                            {
+                                "name": "sdram_test_top_m0/state_main_reg[2]",
+                                "states": [
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "WRITE_DONE",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "READ_DONE",
+                                        "val": "0100"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "sdram_test_top_m0/state_main[1]",
+                        "state_reg": [
+                            {
+                                "name": "sdram_test_top_m0/state_main_reg[1]",
+                                "states": [
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "WRITE_DONE",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "READ_DONE",
+                                        "val": "0100"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "sdram_test_top_m0/state_main[0]",
+                        "state_reg": [
+                            {
+                                "name": "sdram_test_top_m0/state_main_reg[0]",
+                                "states": [
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "WRITE_DONE",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "READ_DONE",
+                                        "val": "0100"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
