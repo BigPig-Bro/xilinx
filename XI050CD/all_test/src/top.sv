@@ -1,5 +1,10 @@
-module top(
-    input               i_clk,
+module top#(
+    parameter MEM_BA_WIDTH            = 2   ,       
+    parameter MEM_ROW_WIDTH           = 11  ,       
+    parameter MEM_COL_WIDTH           = 8   ,       
+    parameter MEM_DATA_WIDTH          = 32                
+)(
+    input               i_clk_25m,
 
     input       [3:0]   i_key,
     output      [3:0]   o_led,
@@ -18,7 +23,19 @@ module top(
     output      [2:0]   o_hdmi_d_p,
     output      [2:0]   o_hdmi_d_n,
 
-    output      [33:0]  exter_io1,exter_io2
+    output      [33:0]  exter_io1,exter_io2,
+
+	//板载恒定
+	// output                                  o_sdram_cke,     //sdram clock enable
+	// output                                  o_sdram_cs_n,    //sdram chip select
+	// output  [(MEM_DATA_WIDTH / 8) - 1 : 0]  o_sdram_dqm,     //sdram data enable 
+    output                                  o_sdram_clk,     //sdram clock
+	output                                  o_sdram_we_n,    //sdram write enable
+	output                                  o_sdram_cas_n,   //sdram column address strobe
+	output                                  o_sdram_ras_n,   //sdram row address strobe
+	output  [MEM_BA_WIDTH - 1 : 0]          o_sdram_ba,      //sdram bank address
+	output  [10:0]                          o_sdram_addr,    //sdram address
+	inout   [MEM_DATA_WIDTH - 1 : 0]        io_sdram_dq       //sdram data
 );
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +44,7 @@ module top(
 /////////////////////////////////////////////////////////////////////////////////////////
 // 降低到hz，生成分频信号1hz A
 logic [24:0] cnt;
-always@(posedge i_clk)
+always@(posedge i_clk_25m)
     cnt <= cnt + 1;
 
 logic clk_A ;
@@ -38,12 +55,12 @@ assign clk_A = cnt[24];
 //////////////////// 		        测试按键LED	            /////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
-//现象：按键按下，对应的LED快闪，否则 23闪烁 01如果TF卡初始化成功，闪烁，未成功常亮
-
-assign   o_led[0] = ~i_key[0] ? cnt[20]: sd_init_done? cnt[24] : cnt[23];
+//现象：按键按下，对应的LED快闪，否则 23闪烁 01如果TF卡初始化成功，012同步闪烁，sdram正常 3继续同步012
+logic sd_init_done, sdram_error;
+assign   o_led[0] = ~i_key[0] ? cnt[20] : sd_init_done? cnt[24] : cnt[23];
 assign   o_led[1] = ~i_key[1] ? cnt[20] : sd_init_done? cnt[24] : cnt[23];
-assign   o_led[2] = ~i_key[2] ? cnt[20] :                      	cnt[24];
-assign   o_led[3] = ~i_key[3] ? cnt[20] :                      	cnt[24];
+assign   o_led[2] = ~i_key[2] ? cnt[20] :               cnt[24];
+assign   o_led[3] = ~i_key[3] ? cnt[20] : sdram_error ? cnt[23] : cnt[24];
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -54,11 +71,10 @@ assign   o_led[3] = ~i_key[3] ? cnt[20] :                      	cnt[24];
 //现象：TF卡初始化成功后，给出信号sd_init_done
 logic tf_clk;
 tf_pll tf_pll_m0(
-.clk_in1(i_clk),
-.clk_out1(tf_clk)
+	.clk_in1 	(i_clk_25m 	),
+	.clk_out1 	(tf_clk 	)
 );
 
-logic sd_init_done;
 sd_card_top  sd_card_top_m0(
 	.clk                       (tf_clk                      ),
 	.rst                       (~i_key[0]                  ),
@@ -178,7 +194,7 @@ assign exter_io2[33] = ~clk_A ;
 /////////////////////////////////////////////////////////////////////////////////////////
 
 hdmi_colorbar_top hdmi_colorbar_top_m0(
-	.sys_clk			(i_clk	 		),
+	.sys_clk			(i_clk_25m	 		),
 	.sys_rst_n			(1'b1  			),
 	.tmds_clk_p			(o_hdmi_clk_p	),
 	.tmds_clk_n			(o_hdmi_clk_n	),
@@ -187,5 +203,28 @@ hdmi_colorbar_top hdmi_colorbar_top_m0(
 	.tmds_data_n		(o_hdmi_d_n		)
 );
 
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+//////////////////// 			    测试SDRAM    	         /////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+sdram_top #(
+    .MEM_BA_WIDTH            (MEM_BA_WIDTH         ),
+    .MEM_ROW_WIDTH           (MEM_ROW_WIDTH        ),
+    .MEM_COL_WIDTH           (MEM_COL_WIDTH        ),
+    .MEM_DATA_WIDTH          (MEM_DATA_WIDTH       )
+)sdram_top_m0(
+	.i_clk_25m 			(i_clk_25m          ),
+	.i_rst_n 			(i_key[0]           ),
 
+	.o_led 	 			(sdram_error 	    ),
+
+	.o_sdram_clk 		  (o_sdram_clk        ),
+	.o_sdram_ras_n        (o_sdram_ras_n      ),
+	.o_sdram_cas_n        (o_sdram_cas_n      ),
+	.o_sdram_we_n         (o_sdram_we_n       ),
+	.o_sdram_ba           (o_sdram_ba         ),
+	.o_sdram_addr         (o_sdram_addr       ),
+	.io_sdram_dq          (io_sdram_dq        )
+);
 endmodule 
