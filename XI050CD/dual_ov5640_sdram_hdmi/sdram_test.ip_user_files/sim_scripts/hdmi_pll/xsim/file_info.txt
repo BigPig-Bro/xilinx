@@ -1,0 +1,3 @@
+hdmi_pll_clk_wiz.v,verilog,xil_defaultlib,../../../../sdram_test.gen/sources_1/ip/hdmi_pll/hdmi_pll_clk_wiz.v,incdir="../../../ipstatic"incdir="../../../ipstatic"
+hdmi_pll.v,verilog,xil_defaultlib,../../../../sdram_test.gen/sources_1/ip/hdmi_pll/hdmi_pll.v,incdir="../../../ipstatic"incdir="../../../ipstatic"
+glbl.v,Verilog,xil_defaultlib,glbl.v

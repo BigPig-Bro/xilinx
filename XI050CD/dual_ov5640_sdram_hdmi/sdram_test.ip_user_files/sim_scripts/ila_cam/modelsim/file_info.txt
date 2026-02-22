@@ -1,0 +1,5 @@
+xpm_cdc.sv,systemverilog,xpm,D:/Xilinx20242/Vivado/2024.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,incdir="../../../../sdram_test.gen/sources_1/ip/ila_cam/hdl/verilog"
+xpm_memory.sv,systemverilog,xpm,D:/Xilinx20242/Vivado/2024.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,incdir="../../../../sdram_test.gen/sources_1/ip/ila_cam/hdl/verilog"
+xpm_VCOMP.vhd,vhdl,xpm,D:/Xilinx20242/Vivado/2024.2/data/ip/xpm/xpm_VCOMP.vhd,incdir="../../../../sdram_test.gen/sources_1/ip/ila_cam/hdl/verilog"
+ila_cam.v,verilog,xil_defaultlib,../../../../sdram_test.gen/sources_1/ip/ila_cam/sim/ila_cam.v,incdir="../../../../sdram_test.gen/sources_1/ip/ila_cam/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v

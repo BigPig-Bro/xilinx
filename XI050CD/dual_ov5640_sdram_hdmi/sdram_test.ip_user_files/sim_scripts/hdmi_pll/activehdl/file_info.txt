@@ -1,0 +1,5 @@
+xpm_cdc.sv,systemverilog,xpm,D:/Xilinx20242/Vivado/2024.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,incdir="../../../ipstatic"incdir="../../../ipstatic"
+xpm_VCOMP.vhd,vhdl,xpm,D:/Xilinx20242/Vivado/2024.2/data/ip/xpm/xpm_VCOMP.vhd,incdir="../../../ipstatic"incdir="../../../ipstatic"
+hdmi_pll_clk_wiz.v,verilog,xil_defaultlib,../../../../sdram_test.gen/sources_1/ip/hdmi_pll/hdmi_pll_clk_wiz.v,incdir="../../../ipstatic"incdir="../../../ipstatic"
+hdmi_pll.v,verilog,xil_defaultlib,../../../../sdram_test.gen/sources_1/ip/hdmi_pll/hdmi_pll.v,incdir="../../../ipstatic"incdir="../../../ipstatic"
+glbl.v,Verilog,xil_defaultlib,glbl.v

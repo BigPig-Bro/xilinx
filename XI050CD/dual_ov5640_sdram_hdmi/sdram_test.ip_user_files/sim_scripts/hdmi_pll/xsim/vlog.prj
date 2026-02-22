@@ -1,0 +1,8 @@
+verilog xil_defaultlib --include "../../../ipstatic" \
+"../../../../sdram_test.gen/sources_1/ip/hdmi_pll/hdmi_pll_clk_wiz.v" \
+"../../../../sdram_test.gen/sources_1/ip/hdmi_pll/hdmi_pll.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

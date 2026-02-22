@@ -1,0 +1,7 @@
+verilog xil_defaultlib  \
+"../../../../sdram_test.gen/sources_1/ip/write_fifo/sim/write_fifo.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
