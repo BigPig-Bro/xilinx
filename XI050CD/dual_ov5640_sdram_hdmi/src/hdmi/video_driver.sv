@@ -148,7 +148,7 @@ always@ (posedge i_sys_clk) begin
     if(!i_sys_rst_n)
         pixel_ypos_r <= 11'd0;
     else if((cnt_v >= (V_SYNC + V_BACK)) && (cnt_v < (V_SYNC + V_BACK + V_DISP)))
-        pixel_ypos_r <= cnt_v + 1'b1 - (V_SYNC + V_BACK) ;
+        pixel_ypos_r <= cnt_v + 2'd1 - (V_SYNC + V_BACK) ;
     else 
         pixel_ypos_r <= 11'd0;
 end
