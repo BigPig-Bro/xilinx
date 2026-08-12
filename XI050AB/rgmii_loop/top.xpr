@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="68" Path="E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI050CD/rgmii_loop/top.xpr">
+<Project Product="Vivado" Version="7" Minor="68" Path="E:/FPGA_work/FPGA_Boards_Git/Xilinx/XI050AB/rgmii_loop/top.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2cbc2c18549a467298f17ee59cecf3ba"/>

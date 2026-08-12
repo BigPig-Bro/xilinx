@@ -1,10 +1,11 @@
--- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Mon Aug  3 10:50:56 2026
--- Host        : DESKTOP-BigPigBro running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+-- Date        : Wed Aug 12 22:48:13 2026
+-- Host        : DESKTOP-9MNJBAS running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/ZHKJ/Desktop/rgmii_loop/top.srcs/sources_1/ip/rx_dly_pll/rx_dly_pll_sim_netlist.vhdl
+--               e:/FPGA_work/FPGA_Boards_Git/Xilinx/XI050AB/rgmii_loop/top.gen/sources_1/ip/rx_dly_pll/rx_dly_pll_sim_netlist.vhdl
 -- Design      : rx_dly_pll
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,18 +15,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity rx_dly_pll_rx_dly_pll_clk_wiz is
+entity rx_dly_pll_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
     reset : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of rx_dly_pll_rx_dly_pll_clk_wiz : entity is "rx_dly_pll_clk_wiz";
-end rx_dly_pll_rx_dly_pll_clk_wiz;
+end rx_dly_pll_clk_wiz;
 
-architecture STRUCTURE of rx_dly_pll_rx_dly_pll_clk_wiz is
+architecture STRUCTURE of rx_dly_pll_clk_wiz is
   signal clk_in1_rx_dly_pll : STD_LOGIC;
   signal clk_out1_rx_dly_pll : STD_LOGIC;
   signal clkfbout_buf_rx_dly_pll : STD_LOGIC;
@@ -180,7 +179,7 @@ end rx_dly_pll;
 
 architecture STRUCTURE of rx_dly_pll is
 begin
-inst: entity work.rx_dly_pll_rx_dly_pll_clk_wiz
+inst: entity work.rx_dly_pll_clk_wiz
      port map (
       clk_in1 => clk_in1,
       clk_out1 => clk_out1,
