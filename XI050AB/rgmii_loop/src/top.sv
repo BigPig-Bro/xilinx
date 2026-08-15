@@ -1,7 +1,6 @@
 // RGMII 千兆以太网核 — V1.0.0
 //
 module top (
-    input                               i_clk_25,
     input                               i_rst_n,
     
     input                               i_rgmii_rxc,
@@ -20,8 +19,8 @@ assign o_rgmii_rst_n = i_rst_n;
 localparam [47:0] P_LOCAL_MAC   = 48'h0202_DEAD_BEEF;
 localparam [31:0] P_LOCAL_IP    = {8'd192, 8'd168, 8'd1, 8'd210};
 // localparam [47:0] P_DST_MAC     = 48'h00e0_4c70_00ab; //TM1703
-// localparam [47:0] P_DST_MAC     = 48'h10FF_E0F7_CEE0;//Work PC
-localparam [47:0] P_DST_MAC     = 48'h00e0_4c68_0ffa;//Home PC
+localparam [47:0] P_DST_MAC     = 48'h10FF_E0F7_CEE0;//Work PC
+//localparam [47:0] P_DST_MAC     = 48'h00e0_4c68_0ffa;//Home PC
 localparam [31:0] P_DST_IP      = {8'd192, 8'd168, 8'd1, 8'd100};
 localparam [15:0] P_DST_PORT    = 16'd8000;
 localparam [15:0] P_SRC_PORT    = 16'd8000;
@@ -37,6 +36,7 @@ logic       usr_tx_wr, usr_in_tx_wr;
 logic       usr_tx_last, usr_in_tx_last;
 logic [7:0] loop_tx_data;
 logic       loop_tx_wr, loop_tx_last;
+logic       usr_clk;
 
 // === User TX 合并（loop_top 优先于 user_top）===
 assign usr_in_tx_data = loop_tx_wr ? loop_tx_data : usr_tx_data;
@@ -62,6 +62,7 @@ udp_top #(
     .o_rgmii_txctl (o_rgmii_txctl ),
     .o_rgmii_txc   (o_rgmii_txc   ),
 
+    .o_usr_clk     (usr_clk       ),
     .o_usr_rx_data (usr_rx_data   ),
     .o_usr_rx_valid(usr_rx_valid  ),
     .o_usr_rx_last (usr_rx_last   ),
