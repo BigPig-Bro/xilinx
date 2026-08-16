@@ -19,8 +19,7 @@ module test_top #(
     output      logic                   o_tx_last,
 
     input                               i_uart_rx,
-    output                              o_uart_tx,
-    output      logic           [ 1:0]  o_mode
+    output                              o_uart_tx
 );
 localparam [15:0] P_PAYLOAD_LEN = 16'd1024;
 localparam        PKT_LEN  = 16'd14 + 16'd20 + 16'd8 + P_PAYLOAD_LEN;
