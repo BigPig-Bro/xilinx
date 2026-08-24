@@ -1,0 +1,46 @@
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN W19} [get_ports {i_clk}]
+
+
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN N4} [get_ports {o_lcd_rgb[16]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN K1} [get_ports {o_lcd_rgb[17]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN P4} [get_ports {o_lcd_rgb[18]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN K2} [get_ports {o_lcd_rgb[19]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN M6} [get_ports {o_lcd_rgb[20]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J1} [get_ports {o_lcd_rgb[21]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN L5} [get_ports {o_lcd_rgb[22]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J6} [get_ports {o_lcd_rgb[23]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN L3} [get_ports {o_lcd_rgb[8]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J4} [get_ports {o_lcd_rgb[9]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN L6} [get_ports {o_lcd_rgb[10]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J5} [get_ports {o_lcd_rgb[11]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN K6} [get_ports {o_lcd_rgb[12]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H4} [get_ports {o_lcd_rgb[13]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN K4} [get_ports {o_lcd_rgb[14]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H3} [get_ports {o_lcd_rgb[15]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J2} [get_ports {o_lcd_rgb[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H5} [get_ports {o_lcd_rgb[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H2} [get_ports {o_lcd_rgb[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN G4} [get_ports {o_lcd_rgb[3]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN G1} [get_ports {o_lcd_rgb[4]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN E3} [get_ports {o_lcd_rgb[5]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN G2} [get_ports {o_lcd_rgb[6]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN F1} [get_ports {o_lcd_rgb[7]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN G3} [get_ports {o_lcd_clk}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN D2} [get_ports {o_lcd_hs}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN F4} [get_ports {o_lcd_vs}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN T3} [get_ports {o_lcd_de}]
+
+
+#====================================================================
+# 编码器按键约束：每组均为 B / A / ENTER 三个IO
+# 对应端口位定义：i_key_*[0]=A，[1]=B，[2]=ENTER（与Encoder_key.sv一致）
+#--------------------------------------------------------------------
+# 编码器A（第一组）：B=F3, A=E2, ENTER=C2
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN E2} [get_ports {i_key_A[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN F3} [get_ports {i_key_A[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN C2} [get_ports {i_key_A[2]}]
+
+# 编码器B（第二组）：B=E1, A=B1, ENTER=B2
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN B1} [get_ports {i_key_B[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN E1} [get_ports {i_key_B[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN B2} [get_ports {i_key_B[2]}]
