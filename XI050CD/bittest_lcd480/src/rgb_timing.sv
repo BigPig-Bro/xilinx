@@ -14,11 +14,11 @@ module rgb_timing(
 );
 
  //480*2720@60Hz 9Mhz            //800*480@60Hz 33Mhz                 
-parameter H_ACTIVE = 16'd48;     //  16'd800;  
+parameter H_ACTIVE = 16'd480;    //  16'd800;  
 parameter H_FP     = 16'd2;      //  16'd40;   
 parameter H_SYNC   = 16'd41;     //  16'd128;  
 parameter H_BP     = 16'd2;      //  16'd88;   
-parameter V_ACTIVE = 16'd27;     //  16'd480;  
+parameter V_ACTIVE = 16'd272;    //  16'd480;  
 parameter V_FP     = 16'd2;      //  16'd1;    
 parameter V_SYNC   = 16'd10;     //  16'd3;    
 parameter V_BP     = 16'd2;      //  16'd21;   
