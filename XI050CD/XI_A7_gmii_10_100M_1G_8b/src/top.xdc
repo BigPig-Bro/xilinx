@@ -1,0 +1,40 @@
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+
+# XI050CD
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  V18} [get_ports {i_rst_n}]
+# XI050CD UART
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN R16} [get_ports {i_uart_rx}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN V17} [get_ports {o_uart_tx}]
+# XI050CD KEY侧排针 + GMII模块
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  H14} [get_ports {i_gmii_rx_valid}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  H22} [get_ports {i_gmii_rx_data[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  H15} [get_ports {i_gmii_rx_data[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  H20} [get_ports {i_gmii_rx_data[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  G15} [get_ports {i_gmii_rx_data[3]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  J20} [get_ports {i_gmii_rx_clk}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  G16} [get_ports {i_gmii_rx_data[4]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  J22} [get_ports {i_gmii_rx_data[5]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  G17} [get_ports {i_gmii_rx_data[6]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  J21} [get_ports {i_gmii_rx_data[7]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  H17} [get_ports {i_gmii_rx_err}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  K22} [get_ports {o_gmii_tx_clk}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  H19} [get_ports {o_gmii_tx_valid}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  L20} [get_ports {o_gmii_tx_data[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  G20} [get_ports {o_gmii_rst_n}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  L21} [get_ports {o_gmii_tx_data[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  J16} [get_ports {o_gmii_tx_data[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  M20} [get_ports {o_gmii_tx_data[3]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  M21} [get_ports {o_gmii_tx_data[4]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  J15} [get_ports {o_gmii_tx_data[5]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  M22} [get_ports {o_gmii_tx_data[6]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  K16} [get_ports {o_gmii_tx_data[7]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  N20} [get_ports {o_gmii_tx_err}]
+
+
+
+set_property SLEW FAST [get_ports {i_gmii_rx_data[*]}]
+set_property SLEW FAST [get_ports o_gmii_tx_clk]
+set_property SLEW FAST [get_ports o_gmii_tx_valid]
+create_clock -period 8.000 -name rx_clk [get_ports i_gmii_rx_clk]
+create_clock -period 8.000 -name tx_clk [get_ports o_gmii_tx_clk]
