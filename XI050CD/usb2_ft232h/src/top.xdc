@@ -1,0 +1,21 @@
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN V18} [get_ports {i_rst_n}]
+
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H22} [get_ports {io_ft_data[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H14} [get_ports {io_ft_data[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H20} [get_ports {io_ft_data[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H15} [get_ports {io_ft_data[3]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J20} [get_ports {io_ft_data[4]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN G15} [get_ports {io_ft_data[5]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J22} [get_ports {io_ft_data[6]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN G16} [get_ports {io_ft_data[7]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN J21} [get_ports {i_ft_rxf_n}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN G17} [get_ports {i_ft_txe_n}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN K21} [get_ports {o_ft_rd_n}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H17} [get_ports {o_ft_wr_n}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN K22} [get_ports {o_ft_siwu_n}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN H18} [get_ports {i_ft_clk}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN L20} [get_ports {o_ft_oe_n}]
+
+create_clock -period 16.667 -name ft_clk [get_ports {i_ft_clk}]
+
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets i_ft_clk_IBUF]
