@@ -153,3 +153,58 @@ set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  D20 } [get_ports {io_sdram
 set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  B20 } [get_ports {io_sdram_dq[30]}]
 set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  D21 } [get_ports {io_sdram_dq[31]}]
 
+#====================================================================
+# 以太网测试（双路RGMII，1000M）
+# 网口0 = XI050CD U11 -> 192.168.1.101
+# 网口1 = XI050CD U13 -> 192.168.1.102
+#====================================================================
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  W22} [get_ports {o_eth_rst_n}]
+
+# 网口0 U11
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN   V4} [get_ports {i_rgmii0_rxc}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AA1} [get_ports {i_rgmii0_rxctl}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AB1} [get_ports {i_rgmii0_rxd[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AB2} [get_ports {i_rgmii0_rxd[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN   Y3} [get_ports {i_rgmii0_rxd[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AB3} [get_ports {i_rgmii0_rxd[3]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN   W4} [get_ports {o_rgmii0_txc}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN   Y4} [get_ports {o_rgmii0_txctl}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AA3} [get_ports {o_rgmii0_txd[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AA4} [get_ports {o_rgmii0_txd[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AB5} [get_ports {o_rgmii0_txd[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  AA5} [get_ports {o_rgmii0_txd[3]}]
+
+# 网口1 U13
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  Y18} [get_ports {i_rgmii1_rxc}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AB18} [get_ports {i_rgmii1_rxctl}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AA18} [get_ports {i_rgmii1_rxd[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  Y19} [get_ports {i_rgmii1_rxd[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AA19} [get_ports {i_rgmii1_rxd[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AB20} [get_ports {i_rgmii1_rxd[3]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  W20} [get_ports {o_rgmii1_txc}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AA20} [get_ports {o_rgmii1_txctl}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AB21} [get_ports {o_rgmii1_txd[0]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AA21} [get_ports {o_rgmii1_txd[1]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN AB22} [get_ports {o_rgmii1_txd[2]}]
+set_property -dict { IOSTANDARD LVCMOS33 PACKAGE_PIN  Y21} [get_ports {o_rgmii1_txd[3]}]
+
+set_property SLEW FAST [get_ports {o_rgmii0_txd[*]}]
+set_property SLEW FAST [get_ports o_rgmii0_txc]
+set_property SLEW FAST [get_ports o_rgmii0_txctl]
+set_property SLEW FAST [get_ports {o_rgmii1_txd[*]}]
+set_property SLEW FAST [get_ports o_rgmii1_txc]
+set_property SLEW FAST [get_ports o_rgmii1_txctl]
+
+create_clock -period 8.000 -name rx_clk0 [get_ports i_rgmii0_rxc]
+create_clock -period 8.000 -name tx_clk0 [get_ports o_rgmii0_txc]
+create_clock -period 8.000 -name rx_clk1 [get_ports i_rgmii1_rxc]
+create_clock -period 8.000 -name tx_clk1 [get_ports o_rgmii1_txc]
+
+#====================================================================
+# 双路RGMII各自的IDELAY组（两个IDELAYCTRL必须分组，否则DRC PLIDC-7）
+#====================================================================
+set_property IODELAY_GROUP ETH0 [get_cells -hier -filter {NAME =~ "*udp_top_m0*" && REF_NAME == "IDELAYCTRL"}]
+set_property IODELAY_GROUP ETH0 [get_cells -hier -filter {NAME =~ "*udp_top_m0*" && REF_NAME == "IDELAYE2"}]
+set_property IODELAY_GROUP ETH1 [get_cells -hier -filter {NAME =~ "*udp_top_m1*" && REF_NAME == "IDELAYCTRL"}]
+set_property IODELAY_GROUP ETH1 [get_cells -hier -filter {NAME =~ "*udp_top_m1*" && REF_NAME == "IDELAYE2"}]
+

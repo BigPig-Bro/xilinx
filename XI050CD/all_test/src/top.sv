@@ -23,6 +23,21 @@ module top#(
     output      [2:0]   o_hdmi_d_p,
     output      [2:0]   o_hdmi_d_n,
 
+	//以太网（双路RGMII测试）
+	output              o_eth_rst_n,   //PHY复位，低有效
+	input               i_rgmii0_rxc,  //网口0 U11 接收时钟
+	input               i_rgmii0_rxctl,//网口0 接收控制
+	input       [3:0]   i_rgmii0_rxd,  //网口0 接收数据
+	output              o_rgmii0_txc,  //网口0 发送时钟
+	output              o_rgmii0_txctl,//网口0 发送控制
+	output      [3:0]   o_rgmii0_txd,  //网口0 发送数据
+	input               i_rgmii1_rxc,  //网口1 U13 接收时钟
+	input               i_rgmii1_rxctl,//网口1 接收控制
+	input       [3:0]   i_rgmii1_rxd,  //网口1 接收数据
+	output              o_rgmii1_txc,  //网口1 发送时钟
+	output              o_rgmii1_txctl,//网口1 发送控制
+	output      [3:0]   o_rgmii1_txd,  //网口1 发送数据
+
     output      [33:0]  exter_io1,exter_io2,
 
 	//板载恒定
@@ -70,10 +85,19 @@ assign   o_led[3] = ~i_key[3] ? cnt[20] : sdram_error ? cnt[23] : cnt[24];
 /////////////////////////////////////////////////////////////////////////////////////////
 //现象：TF卡初始化成功后，给出信号sd_init_done
 logic tf_clk;
-tf_pll tf_pll_m0(
-	.clk_in1 	(i_clk_25m 	),
-	.clk_out1 	(tf_clk 	)
+// 合并时钟IP：25MHz -> 200MHz(IDELAY参考) / 100MHz(SDRAM) / 50MHz(TF卡)
+// 合并目的：XC7A50T只有5个MMCM站点，减少25MHz驱动的时钟单元数量
+logic clk_200m, clk_100m, clk_50m, clk_locked;
+sys_clk_wiz sys_clk_wiz_m0(
+	.clk_in1 	(i_clk_25m  ),
+	.reset   	(1'b0       ),
+	.clk_out1	(clk_200m   ),
+	.clk_out2	(clk_100m   ),
+	.clk_out3	(clk_50m    ),
+	.locked  	(clk_locked )
 );
+
+assign tf_clk = clk_50m;
 
 sd_card_top  sd_card_top_m0(
 	.clk                       (tf_clk                      ),
@@ -214,7 +238,9 @@ sdram_top #(
     .MEM_COL_WIDTH           (MEM_COL_WIDTH        ),
     .MEM_DATA_WIDTH          (MEM_DATA_WIDTH       )
 )sdram_top_m0(
-	.i_clk_25m 			(i_clk_25m          ),
+	.i_clk_25m 			(i_clk_25m       ),
+	.i_clk_100m 		(clk_100m           ),
+	.i_clk_locked		(clk_locked         ),
 	.i_rst_n 			(i_key[0]           ),
 
 	.o_led 	 			(sdram_error 	    ),
@@ -227,4 +253,32 @@ sdram_top #(
 	.o_sdram_addr         (o_sdram_addr       ),
 	.io_sdram_dq          (io_sdram_dq        )
 );
-endmodule 
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+//////////////////// 			    测试以太网    	         /////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+//现象：网线插在哪个网口，ping 对应IP 有回应（U11=192.168.1.101，U13=192.168.1.102）
+assign o_eth_rst_n = 1'b1;
+
+eth_test eth_test_m0(
+	.i_rst_n            (i_key[0]           ),
+	.i_clk_200m         (clk_200m           ),
+	.i_pll_locked       (clk_locked         ),
+
+	.i_rgmii0_rxc       (i_rgmii0_rxc       ),
+	.i_rgmii0_rxctl     (i_rgmii0_rxctl     ),
+	.i_rgmii0_rxd       (i_rgmii0_rxd       ),
+	.o_rgmii0_txc       (o_rgmii0_txc       ),
+	.o_rgmii0_txctl     (o_rgmii0_txctl     ),
+	.o_rgmii0_txd       (o_rgmii0_txd       ),
+
+	.i_rgmii1_rxc       (i_rgmii1_rxc       ),
+	.i_rgmii1_rxctl     (i_rgmii1_rxctl     ),
+	.i_rgmii1_rxd       (i_rgmii1_rxd       ),
+	.o_rgmii1_txc       (o_rgmii1_txc       ),
+	.o_rgmii1_txctl     (o_rgmii1_txctl     ),
+	.o_rgmii1_txd       (o_rgmii1_txd       )
+);
+endmodule

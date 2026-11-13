@@ -6,6 +6,8 @@ module sdram_top#(
 )(
     input                                   i_clk_25m,
     input                                   i_rst_n,
+    input                                   i_clk_100m,     //外部100MHz（合并时钟IP）
+    input                                   i_clk_locked,   //100MHz锁定
 
     output                                  o_led,
 
@@ -52,13 +54,9 @@ key_sync #(
     .o_key_sync     (key_rst               )
 );
 
-logic  sdram_clk_100m, sdram_pll_locked;
-sdram_pll sdram_pll_m0(
-	.clk_in1         (i_clk_25m      ),
-    .reset           (key_rst        ),
-	.clk_out1        (sdram_clk_100m ),
-    .locked          (sdram_pll_locked)
-);
+// 100MHz由顶层合并时钟IP统一提供（原sdram_pll已删除）
+assign sdram_clk_100m   = i_clk_100m;
+assign sdram_pll_locked = i_clk_locked;
 
 assign sys_rst  = key_rst | ~sdram_pll_locked;
 /********************************************************************************/
